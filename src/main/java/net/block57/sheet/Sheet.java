@@ -10,8 +10,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.entity.FabricEntityTypeBuilder;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.Material;
+import net.minecraft.block.*;
 import net.minecraft.entity.EntityCategory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.*;
@@ -31,7 +30,7 @@ public class Sheet implements ModInitializer {
 	public static SoundEvent NIGRA_EVENT = new SoundEvent(NIGRA_EVENT_ID);
 
 	public static EntityType<RisingBlockEntity> RISING_BLOCK;
-	public static ToolMaterial WII_MATERIAL = new SheetToolMaterial(4, 800, 10f, 12f, 15, () -> Ingredient.ofItems(new ItemConvertible[]{Blocks.OBSIDIAN}));
+	public static ToolMaterial WII_MATERIAL = new SheetToolMaterial(4, 800, 10f, 12f, 15, () -> Ingredient.ofItems(Blocks.OBSIDIAN));
 
 	public static final FastBlock FAST_BLOCK = new FastBlock(FabricBlockSettings.of(Material.PISTON).sounds(BlockSoundGroup.LANTERN).lightLevel(15).breakInstantly().slipperiness(4).build());
 	public static final SlowBlock SLOW_BLOCK = new SlowBlock(FabricBlockSettings.of(Material.PISTON).sounds(BlockSoundGroup.LANTERN).lightLevel(-15).breakInstantly().slipperiness(0.1f).build());
@@ -42,6 +41,8 @@ public class Sheet implements ModInitializer {
 	public static final WalterCoin WALTERCOIN = new WalterCoin(new Item.Settings().group(SHEET_ITEM_GROUP).maxCount(14));
 	public static final Item CHINKEN_NUNGET = new Item(new Item.Settings().group(SHEET_ITEM_GROUP).food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).meat().snack().build()));
 	public static final SwordItem WII_REMOTE = new SwordItem(WII_MATERIAL, 0, 16f, new Item.Settings().group(SHEET_ITEM_GROUP).maxCount(1).maxDamage(0));
+	public static final SnowballItem YELLOW_SNOW = new SnowballItem(new Item.Settings().group(SHEET_ITEM_GROUP).maxCount(16));
+	public static final Block YELLOW_SNOW_BLOCK = new Block(FabricBlockSettings.of(Material.SNOW_BLOCK).strength(0.2F, 1f).sounds(BlockSoundGroup.SNOW).build());
 
 	public static final ItemGroup USEFUL_ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(ModID, "useful"))
 			.icon(() -> new ItemStack(Blocks.COMMAND_BLOCK))
@@ -70,10 +71,13 @@ public class Sheet implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier(ModID, "waltercoin"), WALTERCOIN);
 		Registry.register(Registry.ITEM, new Identifier(ModID, "chinken_nunget"), CHINKEN_NUNGET);
 		Registry.register(Registry.ITEM, new Identifier(ModID, "wii_remote"), WII_REMOTE);
+		Registry.register(Registry.ITEM, new Identifier(ModID, "yellow_snow"), YELLOW_SNOW);
 
 		Registry.register(Registry.BLOCK, new Identifier(ModID, "fast_block"), FAST_BLOCK);
 		Registry.register(Registry.ITEM, new Identifier(ModID, "fast_block"), new BlockItem(FAST_BLOCK, new Item.Settings().group(SHEET_ITEM_GROUP)));
 		Registry.register(Registry.BLOCK, new Identifier(ModID, "slow_block"), SLOW_BLOCK);
 		Registry.register(Registry.ITEM, new Identifier(ModID, "slow_block"), new BlockItem(SLOW_BLOCK, new Item.Settings().group(SHEET_ITEM_GROUP)));
+		Registry.register(Registry.BLOCK, new Identifier(ModID, "yellow_snow_block"), YELLOW_SNOW_BLOCK);
+		Registry.register(Registry.ITEM, new Identifier(ModID, "yellow_snow_block"), new BlockItem(YELLOW_SNOW_BLOCK, new Item.Settings().group(SHEET_ITEM_GROUP)));
 	}
 }

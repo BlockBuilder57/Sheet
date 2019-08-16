@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "sheet:block/yellow_snow_block"
+  }
+}

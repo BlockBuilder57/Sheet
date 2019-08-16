@@ -15,7 +15,9 @@
   "item.sheet.waltercoin.phrase7": "this isn't free vbucks",
   "item.sheet.chinken_nunget": "chinken nunget",
   "item.sheet.wii_remote": "Wii Remote",
+  "item.sheet.yellow_snow": "Yellow Snowball",
 
   "block.sheet.fast_block": "fast block",
-  "block.sheet.slow_block": "slow block"
+  "block.sheet.slow_block": "slow block",
+  "block.sheet.yellow_snow_block": "Yellow Snow"
 }
