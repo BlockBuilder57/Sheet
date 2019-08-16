@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "sheet:block/slow_block" }
+  }
+}

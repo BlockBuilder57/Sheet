@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:cooked_chicken" },
+    { "item": "minecraft:bread" }
+  ],
+  "result": {
+    "item": "sheet:chinken_nunget",
+	"count": 11
+  }
+}

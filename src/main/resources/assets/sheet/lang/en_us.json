@@ -1,0 +1,21 @@
+{
+  "itemGroup.sheet.general": "Sheet",
+  "itemGroup.sheet.useful": "Useful/Weird Items",
+
+  "item.sheet.nigracoin": "NigraCoin",
+  "item.sheet.waltercoin": "WalterCoin",
+  "item.sheet.waltercoin.tooltip": "§3\"i like fire trucks and moster trucks\"§r",
+  "item.sheet.waltercoin.phrase0": "walter",
+  "item.sheet.waltercoin.phrase1": "%s",
+  "item.sheet.waltercoin.phrase2": "i like fire trucks and moster trucks",
+  "item.sheet.waltercoin.phrase3": "karen give the kids back right fucking now",
+  "item.sheet.waltercoin.phrase4": "milton is a fucking idiot",
+  "item.sheet.waltercoin.phrase5": "what the heckk... sex penis?",
+  "item.sheet.waltercoin.phrase6": "I will beat you to death",
+  "item.sheet.waltercoin.phrase7": "this isn't free vbucks",
+  "item.sheet.chinken_nunget": "chinken nunget",
+  "item.sheet.wii_remote": "Wii Remote",
+
+  "block.sheet.fast_block": "fast block",
+  "block.sheet.slow_block": "slow block"
+}

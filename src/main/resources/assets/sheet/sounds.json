@@ -1,0 +1,11 @@
+{
+  "nigra": {
+    "subtitle": "LOUD NIGRA SCREAMS",
+    "sounds": [
+      "sheet:nigra1",
+      "sheet:nigra2",
+      "sheet:nigra3",
+      "sheet:nigra4"
+    ]
+  }
+}

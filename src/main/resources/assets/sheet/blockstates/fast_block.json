@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "sheet:block/fast_block" }
+  }
+}

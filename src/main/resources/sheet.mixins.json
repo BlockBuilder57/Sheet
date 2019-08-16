@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.block57.sheet.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "SheetMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
