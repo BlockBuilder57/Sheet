@@ -2,6 +2,7 @@ package net.block57.sheet;
 
 import net.block57.sheet.blocks.FastBlock;
 import net.block57.sheet.blocks.SlowBlock;
+import net.block57.sheet.blocks.UselessFence;
 import net.block57.sheet.entity.RisingBlockEntity;
 import net.block57.sheet.items.NigraCoin;
 import net.block57.sheet.items.SheetToolMaterial;
@@ -17,10 +18,13 @@ import net.minecraft.item.*;
 import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.server.network.packet.UpdateSelectedSlotC2SPacket;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+
+import static net.minecraft.block.Blocks.OAK_PLANKS;
 
 public class Sheet implements ModInitializer {
 
@@ -34,17 +38,19 @@ public class Sheet implements ModInitializer {
 
 	public static final FastBlock FAST_BLOCK = new FastBlock(FabricBlockSettings.of(Material.PISTON).sounds(BlockSoundGroup.LANTERN).lightLevel(15).breakInstantly().slipperiness(4).build());
 	public static final SlowBlock SLOW_BLOCK = new SlowBlock(FabricBlockSettings.of(Material.PISTON).sounds(BlockSoundGroup.LANTERN).lightLevel(-15).breakInstantly().slipperiness(0.1f).build());
+	public static final Block YELLOW_SNOW_BLOCK = new Block(FabricBlockSettings.of(Material.SNOW_BLOCK).strength(0.2F, 1f).sounds(BlockSoundGroup.SNOW).build());
+	public static final UselessFence USELESS_FENCE = new UselessFence(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).noCollision().build());
 
 	public static final ItemGroup SHEET_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(ModID, "general"), () -> new ItemStack(FAST_BLOCK));
 
 	public static final NigraCoin NIGRACOIN = new NigraCoin(new Item.Settings().group(SHEET_ITEM_GROUP).maxCount(7));
 	public static final WalterCoin WALTERCOIN = new WalterCoin(new Item.Settings().group(SHEET_ITEM_GROUP).maxCount(14));
 	public static final Item CHINKEN_NUNGET = new Item(new Item.Settings().group(SHEET_ITEM_GROUP).food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1f).meat().snack().build()));
+	public static final Item NEGABREAD = new Item(new Item.Settings().group(SHEET_ITEM_GROUP).food(new FoodComponent.Builder().hunger(-5).saturationModifier(-0.6F).alwaysEdible().build()));
 	public static final SwordItem WII_REMOTE = new SwordItem(WII_MATERIAL, 0, 16f, new Item.Settings().group(SHEET_ITEM_GROUP).maxCount(1).maxDamage(0));
-	public static final SnowballItem YELLOW_SNOW = new SnowballItem(new Item.Settings().group(SHEET_ITEM_GROUP).maxCount(16));
-	public static final Block YELLOW_SNOW_BLOCK = new Block(FabricBlockSettings.of(Material.SNOW_BLOCK).strength(0.2F, 1f).sounds(BlockSoundGroup.SNOW).build());
+	public static final SnowballItem YELLOW_SNOWBALL = new SnowballItem(new Item.Settings().group(SHEET_ITEM_GROUP).maxCount(16));
 
-	public static final ItemGroup USEFUL_ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(ModID, "useful"))
+	/*public static final ItemGroup USEFUL_ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(ModID, "useful"))
 			.icon(() -> new ItemStack(Blocks.COMMAND_BLOCK))
 			.appendItems(stacks ->
 			{
@@ -53,7 +59,7 @@ public class Sheet implements ModInitializer {
 				stacks.add(new ItemStack(Blocks.REPEATING_COMMAND_BLOCK));
 				stacks.add(new ItemStack(Items.DEBUG_STICK));
 				stacks.add(PotionUtil.setPotion(new ItemStack(Items.POTION), Potions.EMPTY));
-			}).build();
+			}).build();*/
 
 	@Override
 	public void onInitialize() {
@@ -71,7 +77,8 @@ public class Sheet implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier(ModID, "waltercoin"), WALTERCOIN);
 		Registry.register(Registry.ITEM, new Identifier(ModID, "chinken_nunget"), CHINKEN_NUNGET);
 		Registry.register(Registry.ITEM, new Identifier(ModID, "wii_remote"), WII_REMOTE);
-		Registry.register(Registry.ITEM, new Identifier(ModID, "yellow_snow"), YELLOW_SNOW);
+		Registry.register(Registry.ITEM, new Identifier(ModID, "yellow_snowball"), YELLOW_SNOWBALL);
+		Registry.register(Registry.ITEM, new Identifier(ModID, "negabread"), NEGABREAD);
 
 		Registry.register(Registry.BLOCK, new Identifier(ModID, "fast_block"), FAST_BLOCK);
 		Registry.register(Registry.ITEM, new Identifier(ModID, "fast_block"), new BlockItem(FAST_BLOCK, new Item.Settings().group(SHEET_ITEM_GROUP)));
@@ -79,5 +86,7 @@ public class Sheet implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier(ModID, "slow_block"), new BlockItem(SLOW_BLOCK, new Item.Settings().group(SHEET_ITEM_GROUP)));
 		Registry.register(Registry.BLOCK, new Identifier(ModID, "yellow_snow_block"), YELLOW_SNOW_BLOCK);
 		Registry.register(Registry.ITEM, new Identifier(ModID, "yellow_snow_block"), new BlockItem(YELLOW_SNOW_BLOCK, new Item.Settings().group(SHEET_ITEM_GROUP)));
+		Registry.register(Registry.BLOCK, new Identifier(ModID, "useless_fence"), USELESS_FENCE);
+		Registry.register(Registry.ITEM, new Identifier(ModID, "useless_fence"), new BlockItem(USELESS_FENCE, new Item.Settings().group(SHEET_ITEM_GROUP)));
 	}
 }
