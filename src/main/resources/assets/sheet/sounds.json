@@ -7,5 +7,12 @@
       "sheet:nigra3",
       "sheet:nigra4"
     ]
+  },
+
+  "nokia_arabic": {
+    "subtitle": "Nokia 6610 Arabic Ringtone",
+    "sounds": [
+      "sheet:nokia_arabic"
+    ]
   }
 }

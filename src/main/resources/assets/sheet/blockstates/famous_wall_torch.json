@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=east": { "model": "sheet:block/famous_wall_torch" },
+        "facing=south": { "model": "sheet:block/famous_wall_torch", "y": 90 },
+        "facing=west": { "model": "sheet:block/famous_wall_torch", "y": 180 },
+        "facing=north": { "model": "sheet:block/famous_wall_torch", "y": 270 }
+    }
+}

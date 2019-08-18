@@ -4,7 +4,7 @@
 
   "item.sheet.nigracoin": "NigraCoin",
   "item.sheet.waltercoin": "WalterCoin",
-  "item.sheet.waltercoin.tooltip": "§3\"i like fire trucks and moster trucks\"§r",
+  "item.sheet.waltercoin.tooltip": "\"i like fire trucks and moster trucks\"",
   "item.sheet.waltercoin.phrase0": "walter",
   "item.sheet.waltercoin.phrase1": "%s",
   "item.sheet.waltercoin.phrase2": "i like fire trucks and moster trucks",
@@ -17,9 +17,14 @@
   "item.sheet.wii_remote": "Wii Remote",
   "item.sheet.yellow_snowball": "Yellow Snowball",
   "item.sheet.negabread": "Negabread",
+  "item.sheet.banhammer": "Ban Hammer",
+  "item.sheet.nokia_phone": "Nokia Phone",
+  "item.sheet.nokia_phone.explode": "Explode",
 
   "block.sheet.fast_block": "fast block",
   "block.sheet.slow_block": "slow block",
   "block.sheet.yellow_snow_block": "Yellow Snow",
-  "block.sheet.useless_fence": "Useless Fence"
+  "block.sheet.nut_snow_block": "Nut Snow",
+  "block.sheet.useless_fence": "Useless Fence",
+  "block.sheet.famous_torch": "Famous Torch"
 }
